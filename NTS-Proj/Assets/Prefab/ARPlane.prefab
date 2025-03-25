@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 370767904197948495}
   - component: {fileID: 2437229842300475933}
   - component: {fileID: 5052839315776928214}
+  - component: {fileID: 3527194515694909179}
   m_Layer: 0
   m_Name: ARPlane
   m_TagString: Plane
@@ -118,7 +119,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1a110d32af21aa4d872c707dfcc6043, type: 2}
+  - {fileID: 2100000, guid: d5774351bc3ae4ad393dc1d142ff4235, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,3 +248,19 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &3527194515694909179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360806737566117209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2c039da5539d043932bb9e6b229913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5080843379387734624, guid: 57873289cabe9e84e91fff7558e65ddf, type: 3}
+  timeBeforeStart: 5
+  minSpawnTime: 3
+  maxSpawnTime: 6
