@@ -420,20 +420,20 @@
     <Reference Include="ReportGeneratorMerged">
       <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.testtools.codecoverage\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    <Reference Include="unityplastic">
+      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\unityplastic.dll</HintPath>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>C:\Users\quentin\Documents\EPITA\NTS-EVAN\NTS-AR\NTS-Proj\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.32f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
