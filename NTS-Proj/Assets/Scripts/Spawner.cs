@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject[] prefabs;
     
     [Header("Spawn Settings")]
     public float timeBeforeStart = 5f;
@@ -28,7 +28,8 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
         Mesh mesh = GetComponent<MeshFilter>().mesh;
-        Instantiate(prefab, RandomPositionInMeshBounds(mesh), Quaternion.identity);
+        Instantiate(prefabs[Random.Range(0, prefabs.Length)],
+            RandomPositionInMeshBounds(mesh), Quaternion.identity);
         yield return Spawn();
     }
     

@@ -14,6 +14,7 @@ public class Zombie : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, cam.transform.position, Time.deltaTime * speed);
+        transform.LookAt(cam.transform);
     }
 
     private void OnCollisionEnter(Collision other)

@@ -260,7 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2c039da5539d043932bb9e6b229913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5080843379387734624, guid: 57873289cabe9e84e91fff7558e65ddf, type: 3}
+  prefabs:
+  - {fileID: 6423403879286395854, guid: 5c9972d02c3cbb14886e7e4b534feb6d, type: 3}
+  - {fileID: 9203938796069245880, guid: 05e8a697e6c8d354389db69c3c3c7ab0, type: 3}
+  - {fileID: 8954800359469898617, guid: 7e759aa990728b747b505aac4fc03cbb, type: 3}
+  - {fileID: 8747757470087523455, guid: ec385205154590d4d8e38a34bc61854e, type: 3}
+  - {fileID: 1045583631839351886, guid: ce7a46efbf53696419a90728277c4d61, type: 3}
+  - {fileID: 6466474970774430903, guid: 1b39b8a8adde30b43a29f87cc244cce8, type: 3}
+  - {fileID: 3985757784934188552, guid: 50a6944869dd4c44ea7e7b19a650486c, type: 3}
+  - {fileID: 3553767060735298535, guid: 8f7806616d7f8ba4f91da7bcf2c05b11, type: 3}
+  - {fileID: 4528888763381533394, guid: b8d15b0d70e05f54280b437aa34407db, type: 3}
   timeBeforeStart: 5
   minSpawnTime: 3
   maxSpawnTime: 6
