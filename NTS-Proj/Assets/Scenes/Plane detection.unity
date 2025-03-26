@@ -1583,6 +1583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d82d14284b624b43801af2683853ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  profabParticleProjectile: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388,
+    type: 3}
 --- !u!4 &2512387470422636640
 Transform:
   m_ObjectHideFlags: 0

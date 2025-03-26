@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
+    public GameObject particlePrefab;
+    
     Camera cam;
     public float speed = 1f;
 
@@ -23,5 +25,12 @@ public class Zombie : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    private void OnDestroy()
+    {
+        // Instantiate a particle effect and destroy it after 2 seconds
+        var particle = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+        Destroy(particle, 2f);
     }
 }

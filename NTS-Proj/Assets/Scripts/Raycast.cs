@@ -7,7 +7,7 @@ public class Raycast : MonoBehaviour
     Camera cam;
     Ray ray;
     RaycastHit hit;
-
+    
     private void Start()
     {
         cam = Camera.main;
@@ -35,6 +35,6 @@ public class Raycast : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
             }
-        }   
+        }
     }
 }
