@@ -12,3 +12,7 @@ NTS-Proj/.utmp/
 NTS-Proj/.idea/
 
 NTS-Proj/obj/
+
+NTS-Proj/UserSettings/
+
+*.csproj
