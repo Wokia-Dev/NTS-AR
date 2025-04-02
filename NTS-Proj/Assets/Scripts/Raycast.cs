@@ -7,6 +7,11 @@ public class Raycast : MonoBehaviour
     Camera cam;
     Ray ray;
     RaycastHit hit;
+    [SerializeField]public GameObject ParticlePrefab;
+    
+    public int Score = 0;
+    public int Health = 100;
+    
     
     private void Start()
     {
@@ -18,6 +23,18 @@ public class Raycast : MonoBehaviour
         // Create a ray from the center of the screen
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Zombie"))
+        {
+            Health -= 10;
+            var particle = Instantiate(ParticlePrefab, other.transform.position, Quaternion.identity);
+            Destroy(particle, 3f);
+            Destroy(other.gameObject);
+            
+        }
     }
 
     public void Shot()
