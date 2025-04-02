@@ -10,6 +10,8 @@ public class UI_Manager : MonoBehaviour
     private Action currentAction = Action.EnablePlanDetection;
     
     public TMP_Text actionBtnText;
+    
+
 
     private void DisablePlanDetection()
     {

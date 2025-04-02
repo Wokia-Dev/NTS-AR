@@ -14,8 +14,13 @@ public class Raycast : MonoBehaviour
     [SerializeField] public TMP_Text HPBar;
     [SerializeField] public GameObject ParticlePrefab;
     
+    [SerializeField] private GameObject WinPanel;
+    [SerializeField] private GameObject LosePanel;
+    
     public int Score = 0;
     public int Health = 10;
+    
+    private float winScore = 100;
     
     
     private void Start()
@@ -33,12 +38,24 @@ public class Raycast : MonoBehaviour
     private void HealthUpdate()
     {
         Health -= 1;
+        if (Health <= 0)
+        {
+            Health = 0;
+            LosePanel.SetActive(true);
+            Invoke(nameof(ReloadScene), 3f);
+        }
         HPBar.text = "";
         for (int i = 0; i < Health; i++)
         {
             HPBar.text += "\u25a0";
         }
         HPBar.color = new Color(1, (float)(Health / 10.0 ), (float)(Health / 10.0 ));
+    }
+    
+    private void ReloadScene()
+    {
+        var ui_manager = GameObject.FindGameObjectWithTag("UIManager");
+        ui_manager.GetComponent<UI_Manager>().ReloadScene();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -47,7 +64,7 @@ public class Raycast : MonoBehaviour
         {
             HealthUpdate();
             var particle = Instantiate(ParticlePrefab, other.transform.position, Quaternion.identity);
-            Destroy(particle, 3f);
+            Destroy(particle, 1.5f);
             Destroy(other.gameObject);
         }
     }
@@ -66,9 +83,14 @@ public class Raycast : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Zombie"))
             {
                 Score += (int)(hit.distance*10);
+                if (Score > winScore)
+                {
+                    WinPanel.SetActive(true);
+                    Invoke(nameof(ReloadScene), 3f);
+                }
                 ScoreDisplay.text = $"Score: {Score}";
                 var particle = Instantiate(ParticlePrefab, hit.collider.gameObject.transform.position, Quaternion.identity);
-                Destroy(particle, 3f);
+                Destroy(particle, 1.5f);
                 Destroy(hit.collider.gameObject);
             }
         }
