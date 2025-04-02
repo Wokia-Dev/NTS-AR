@@ -1,16 +1,21 @@
 using System;
+using System.Text;
+using TMPro;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
+
 
 public class Raycast : MonoBehaviour
 {
     Camera cam;
     Ray ray;
     RaycastHit hit;
-    [SerializeField]public GameObject ParticlePrefab;
+
+    [SerializeField] public TMP_Text ScoreDisplay;
+    [SerializeField] public TMP_Text HPBar;
+    [SerializeField] public GameObject ParticlePrefab;
     
     public int Score = 0;
-    public int Health = 100;
+    public int Health = 10;
     
     
     private void Start()
@@ -25,15 +30,25 @@ public class Raycast : MonoBehaviour
 
     }
 
+    private void HealthUpdate()
+    {
+        Health -= 1;
+        HPBar.text = "";
+        for (int i = 0; i < Health; i++)
+        {
+            HPBar.text += "\u25a0";
+        }
+        HPBar.color = new Color(1, (float)(Health / 10.0 ), (float)(Health / 10.0 ));
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Zombie"))
         {
-            Health -= 10;
+            HealthUpdate();
             var particle = Instantiate(ParticlePrefab, other.transform.position, Quaternion.identity);
             Destroy(particle, 3f);
             Destroy(other.gameObject);
-            
         }
     }
 
@@ -50,6 +65,10 @@ public class Raycast : MonoBehaviour
             Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.gameObject.CompareTag("Zombie"))
             {
+                Score += (int)(hit.distance*10);
+                ScoreDisplay.text = $"Score: {Score}";
+                var particle = Instantiate(ParticlePrefab, hit.collider.gameObject.transform.position, Quaternion.identity);
+                Destroy(particle, 3f);
                 Destroy(hit.collider.gameObject);
             }
         }
