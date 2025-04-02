@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 863230099}
   - component: {fileID: 863230098}
   - component: {fileID: 863230097}
+  - component: {fileID: 863230100}
   m_Layer: 5
   m_Name: Shot-BTN
   m_TagString: Untagged
@@ -827,6 +828,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863230095}
   m_CullTransparentMesh: 1
+--- !u!95 &863230100
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863230095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79c6ca9f9afce665b9683a868f386a0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1167446570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1076,7 @@ GameObject:
   - component: {fileID: 1762770053}
   - component: {fileID: 1762770055}
   - component: {fileID: 1762770054}
+  - component: {fileID: 1762770056}
   m_Layer: 5
   m_Name: CROSSHAIR
   m_TagString: Untagged
@@ -1099,7 +1123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*'
+  m_text: +
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1179,6 +1203,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762770052}
   m_CullTransparentMesh: 1
+--- !u!95 &1762770056
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762770052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37e6f0d29caf68d73b6ba78473ab51a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1765540924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6605111590819766859, guid: 814a40d932a18e14db5d595441f1590d,
@@ -1583,8 +1629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d82d14284b624b43801af2683853ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profabParticleProjectile: {fileID: 1900756431413560, guid: 529eb4216865eba419c1a4a68d0b0388,
+  ParticlePrefab: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c,
     type: 3}
+  Score: 0
+  Health: 100
 --- !u!4 &2512387470422636640
 Transform:
   m_ObjectHideFlags: 0
