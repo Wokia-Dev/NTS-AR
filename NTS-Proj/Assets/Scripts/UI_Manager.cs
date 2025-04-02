@@ -1,9 +1,11 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -11,8 +13,6 @@ public class UI_Manager : MonoBehaviour
     
     public TMP_Text actionBtnText;
     
-
-
     private void DisablePlanDetection()
     {
         // find AR-Sesion tag
@@ -74,9 +74,9 @@ public class UI_Manager : MonoBehaviour
     {
         actionBtnText.text = "Enable Plan Detection";
         DisablePlanDetection();
-        
     }
-    
+
+
     public enum Action
     {
         DisablePlanDetection,
