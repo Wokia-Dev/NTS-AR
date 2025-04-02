@@ -1,12 +1,13 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 public class UI_Manager : MonoBehaviour
 {
-    private Action currentAction = Action.DisablePlanDetection;
+    private Action currentAction = Action.EnablePlanDetection;
     
     public TMP_Text actionBtnText;
 
@@ -52,9 +53,26 @@ public class UI_Manager : MonoBehaviour
         player.GetComponent<Raycast>().Shot();
     }
     
+    public void ReloadScene()
+    {
+        // find AR-Sesion tag
+        var arSession = GameObject.FindGameObjectWithTag("AR-Sesion");
+        // enable AR-Sesion
+        
+        // get all planes
+        var planes = arSession.GetComponent<ARPlaneManager>().trackables;
+        foreach (var plane in planes)
+        {
+            plane.gameObject.SetActive(false);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
     private void Start()
     {
-        actionBtnText.text = "Disable Plan Detection";
+        actionBtnText.text = "Enable Plan Detection";
+        DisablePlanDetection();
+        
     }
     
     public enum Action
