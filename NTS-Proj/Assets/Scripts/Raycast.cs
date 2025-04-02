@@ -19,13 +19,13 @@ public class Raycast : MonoBehaviour
     
     public int Score = 0;
     public int Health = 10;
-    
     private float winScore = 100;
     
-    
+ 
     private void Start()
     {
         cam = Camera.main;
+        ScoreDisplay.text = $"Score: \n0/{winScore}";
     }
 
     private void Update()
@@ -88,7 +88,8 @@ public class Raycast : MonoBehaviour
                     WinPanel.SetActive(true);
                     Invoke(nameof(ReloadScene), 3f);
                 }
-                ScoreDisplay.text = $"Score: {Score}";
+                ScoreDisplay.text = $"Score:\n{Score}/1000";
+                ScoreDisplay.color = new Color(1, 1, 1-(Score / winScore));
                 var particle = Instantiate(ParticlePrefab, hit.collider.gameObject.transform.position, Quaternion.identity);
                 Destroy(particle, 1.5f);
                 Destroy(hit.collider.gameObject);
